@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="http://wls.deployable.cxf.com/stockquote.xsd"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://wls-deployable-cxf.com/stockquote.xsd" elementFormDefault="qualified">
+      <element name="TradePriceRequest">
+        <complexType>
+          <all>
+            <element name="tickerSymbol" type="string"/>
+          </all>
+        </complexType>
+      </element>
+      <element name="TradePrice">
+         <complexType>
+           <all>
+             <element name="price" type="float"/>
+           </all>
+         </complexType>
+      </element>
+    </schema>
