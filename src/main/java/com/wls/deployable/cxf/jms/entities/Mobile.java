@@ -1,4 +1,4 @@
-package com.distributed.tx.demo.distTxDemo.entities;
+package com.wls.deployable.cxf.jms.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

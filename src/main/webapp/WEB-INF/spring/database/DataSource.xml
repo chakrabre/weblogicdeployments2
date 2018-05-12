@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+		<list>
+			<value>classpath:properties/persistence-MySQL.properties</value>
+			<value>classpath:properties/persistence-oracle10g.properties</value>
+		</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+	</bean> -->
+
+ <jee:jndi-lookup id="devUserDatasource" jndi-name="jdbc.devUserDatasource1" expected-type="javax.sql.DataSource" /> 
+
+
+   <!-- configure an Atomikos JTA-aware datasource 
+   <bean id="devUserDatasource" class="com.atomikos.jdbc.nonxa.AtomikosNonXADataSourceBean" init-method="init" destroy-method="close"> 
+       
+        set an arbitrary but unique name for the datasource  
+      <property name="uniqueResourceName"><value>ShreyasDataSource</value></property> 
+       
+       set the underlying driver class to use, in this example case we use Oracle  
+       <property name="driverClassName"> 
+         <value>oracle.jdbc.OracleDriver</value> 
+       </property> 
+       <property name="url"> 
+          <value>jdbc:oracle:thin:@localhost:1521:xe</value>
+      </property> 
+      <property name="user"> 
+          <value>devuser</value>
+      </property>
+      <property name="password"> 
+          <value>root</value>
+      </property>   
+        how many connections in the pool?
+      <property name="poolSize" value="3"/> 
+   </bean>    -->
+
+
+
+
+	<!-- <bean id="mysqlDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${oracle.user.1.jdbc.driverClassName}" />
+		<property name="url" value="${oracle.user.1.jdbc.url}" />
+		<property name="username" value="${oracle.user.1.jdbc.username}" />
+		<property name="password" value="${oracle.user.1.jdbc.password}" />
+	</bean>
+	
+	<bean id="devUserDatasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${oracle.user.2.jdbc.driverClassName}" />
+		<property name="url" value="${oracle.user.2.jdbc.url}" />
+		<property name="username" value="${oracle.user.2.jdbc.username}" />
+		<property name="password" value="${oracle.user.2.jdbc.password}" />
+	</bean> -->
+
+</beans>
